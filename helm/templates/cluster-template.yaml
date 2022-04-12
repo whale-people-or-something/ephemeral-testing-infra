@@ -1,0 +1,13 @@
+apiVersion: container.gcp.crossplane.io/v1beta2
+kind: Cluster
+metadata:
+  name: {{  .Values.github.sha  }}-{{  .Values.github.branch  }}-auto-k8s
+spec:
+  forProvider:
+    network: {{  .Values.project.network  }}
+    location: {{  .Values.project.location  }}
+    autopilot:
+      enabled: true
+  writeConnectionSecretToRef:
+    name: {{  .Values.github.sha  }}-{{  .Values.github.branch  }}-auto-kube
+    namespace: default

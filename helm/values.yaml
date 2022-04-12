@@ -1,0 +1,13 @@
+replicaCount: 1
+project:
+  network:
+  name:
+github:
+  sha: 1
+  branch: main
+
+image:
+  repository: nginx
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: ""
