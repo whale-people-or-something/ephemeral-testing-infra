@@ -1,7 +1,7 @@
 apiVersion: container.gcp.crossplane.io/v1beta2
 kind: Cluster
 metadata:
-  name: ${GITHUB_SHA}-${GITHUB_REF_NAME}-auto-k8s
+  name: ${GITHUB_REF_NAME}-${GITHUB_RUN_ID}-auto-k8s
 spec:
   forProvider:
     network: ephemeral-testing
@@ -9,5 +9,7 @@ spec:
     autopilot:
       enabled: true
   writeConnectionSecretToRef:
-    name: ${GITHUB_SHA}-${GITHUB_REF_NAME}-auto-kube
+    name: ${GITHUB_REF_NAME}-${GITHUB_RUN_ID}-auto-kube
     namespace: default
+
+# ${GITHUB_RUN_ID}${GITHUB_SHA}-${GITHUB_REF_NAME}-auto-kube

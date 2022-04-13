@@ -2,12 +2,12 @@
 apiVersion: helm.crossplane.io/v1beta1
 kind: ProviderConfig
 metadata:
-  name: ${GITHUB_SHA}-${GITHUB_REF_NAME}-auto-k8s-helm-provider-config
+  name: ${GITHUB_REF_NAME}-${GITHUB_RUN_ID}-auto-k8s-helm-provider-config
 spec:
   credentials:
     source: Secret
     secretRef:
-      name: ${GITHUB_SHA}-${GITHUB_REF_NAME}-auto-kube
+      name: ${GITHUB_REF_NAME}-${GITHUB_RUN_ID}-auto-kube
       namespace: default
       key: kubeconfig
   identity:
