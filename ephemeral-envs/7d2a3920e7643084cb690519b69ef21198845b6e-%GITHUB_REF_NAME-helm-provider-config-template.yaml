@@ -1,0 +1,19 @@
+---
+apiVersion: helm.crossplane.io/v1beta1
+kind: ProviderConfig
+metadata:
+  name: 7d2a3920e7643084cb690519b69ef21198845b6e-main-auto-k8s-helm-provider-config
+spec:
+  credentials:
+    source: Secret
+    secretRef:
+      name: 7d2a3920e7643084cb690519b69ef21198845b6e-main-auto-kube
+      namespace: default
+      key: kubeconfig
+  identity:
+    type: GoogleApplicationCredentials
+    source: Secret
+    secretRef:
+      name: gcp-creds
+      namespace: crossplane-system
+      key: creds
