@@ -4,8 +4,8 @@ metadata:
   name: ${GITHUB_SHA}-${GITHUB_REF_NAME}-auto-k8s
 spec:
   forProvider:
-    network: us-central1
-    # location: {{  .Values.project.location  }}
+    network: ephemeral-testing
+    location: us-central1
     autopilot:
       enabled: true
   writeConnectionSecretToRef:
