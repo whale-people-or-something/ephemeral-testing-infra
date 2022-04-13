@@ -1,0 +1,13 @@
+apiVersion: container.gcp.crossplane.io/v1beta2
+kind: Cluster
+metadata:
+  name: 64a56e6a15720fc4bf0018fcaa83de5c9463190f-main-auto-k8s
+spec:
+  forProvider:
+    network: ephemeral-testing
+    location: us-central1
+    autopilot:
+      enabled: true
+  writeConnectionSecretToRef:
+    name: 64a56e6a15720fc4bf0018fcaa83de5c9463190f-main-auto-kube
+    namespace: default
