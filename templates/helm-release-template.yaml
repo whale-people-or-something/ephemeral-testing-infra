@@ -1,7 +1,7 @@
 apiVersion: helm.crossplane.io/v1beta1
 kind: Release
 metadata:
-  name: {{  .Values.github.sha  }}-{{  .Values.github.branch  }}-release-ingress-nginx
+  name: ${GITHUB_SHA}-${GITHUB_REF_NAME}-release-ingress-nginx
 spec:
   forProvider:
     chart:
@@ -10,4 +10,4 @@ spec:
       version: "4.0.1"
     namespace: default
   providerConfigRef:
-    name: {{  .Values.github.sha  }}-{{  .Values.github.branch  }}-auto-k8s-helm-provider-config
+    name: ${GITHUB_SHA}-${GITHUB_REF_NAME}-auto-k8s-helm-provider-config
