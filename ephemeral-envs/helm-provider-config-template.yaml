@@ -3,13 +3,13 @@ apiVersion: helm.crossplane.io/v1beta1
 kind: ProviderConfig
 metadata:
   # name: ${GITHUB_REF_NAME}-${GITHUB_RUN_ID}-auto-k8s-helm-provider-config
-  name: testing-auto-k8s-helm-provider-config
+  name: argocd-testing-auto-k8s-helm-provider-config
 spec:
   credentials:
     source: Secret
     secretRef:
       # name: ${GITHUB_REF_NAME}-${GITHUB_RUN_ID}-auto-kube
-      name: testing-auto-kube
+      name: argocd-testing-auto-kube
       namespace: default
       key: kubeconfig
   identity:

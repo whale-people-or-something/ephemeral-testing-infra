@@ -1,7 +1,7 @@
 apiVersion: helm.crossplane.io/v1beta1
 kind: Release
 metadata:
-  name: testing-release-ingress-nginx
+  name: argocd-testing-release-ingress-nginx
   # name: ${GITHUB_REF_NAME}-${GITHUB_RUN_ID}-release-ingress-nginx
 spec:
   forProvider:
@@ -11,5 +11,5 @@ spec:
       version: "4.0.1"
     namespace: default
   providerConfigRef:
-    name: testing-auto-k8s-helm-provider-config
+    name: argocd-testing-auto-k8s-helm-provider-config
     # name: ${GITHUB_REF_NAME}-${GITHUB_RUN_ID}-auto-k8s-helm-provider-config

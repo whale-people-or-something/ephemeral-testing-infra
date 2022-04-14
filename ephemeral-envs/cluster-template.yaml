@@ -1,7 +1,7 @@
 apiVersion: container.gcp.crossplane.io/v1beta2
 kind: Cluster
 metadata:
-  name: testing-auto-k8s
+  name: argocd-testing-auto-k8s
   # name: ${GITHUB_REF_NAME}-${GITHUB_RUN_ID}-auto-k8s
 spec:
   forProvider:
@@ -10,7 +10,7 @@ spec:
     autopilot:
       enabled: true
   writeConnectionSecretToRef:
-    name: testing-auto-kube
+    name: argocd-testing-auto-kube
     # name: ${GITHUB_REF_NAME}-${GITHUB_RUN_ID}-auto-kube
     namespace: default
 
