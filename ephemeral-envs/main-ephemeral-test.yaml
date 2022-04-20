@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-    name: main-ephemeral-test
+    generateName: main-ephemeral-test-
     namespace: main-ephemeral-ns
 spec:
   template:
