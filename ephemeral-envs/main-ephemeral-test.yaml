@@ -13,5 +13,5 @@ spec:
           requests:
             cpu: 100m
             memory: 100M
-        command: ["curl main-nginx-service:80"]
+        command: ["/usr/bin/curl main-nginx-service:80"]
       restartPolicy: OnFailure
