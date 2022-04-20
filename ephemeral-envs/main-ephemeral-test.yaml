@@ -7,7 +7,7 @@ spec:
   template:
     spec:
       containers:
-      - image: docker pull curlimages/curl:7.82.0
+      - image: curlimages/curl:7.82.0
         name: main-test-runner
         resources:
           requests:
